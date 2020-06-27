@@ -1,0 +1,37 @@
+{
+  "name": "projectnotifyv2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "webpack.config.js",
+  "dependencies": {
+    "babel-preset-react": "^6.24.1",
+    "formik": "^2.1.4",
+    "nodemon": "^2.0.4",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.10.3",
+    "@babel/preset-env": "^7.10.3",
+    "@babel/preset-react": "^7.10.1",
+    "babel-loader": "^8.1.0",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "webpack:dev": "node --max-old-space-size=4096 node_modules/.bin/webpack-dev-server --mode=development --color --progress",
+    "start:local": "npm run webpack:dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Weswwn/projectnotifyv2.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Weswwn/projectnotifyv2/issues"
+  },
+  "homepage": "https://github.com/Weswwn/projectnotifyv2#readme"
+}
