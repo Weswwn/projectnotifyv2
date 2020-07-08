@@ -2,6 +2,9 @@ const path = require('path');
 
 const webpack = require('webpack');
 
+// plugins
+const CssExtractPlugin = require('mini-css-extract-plugin');
+
 module.exports = {
     devServer: {
         port: 3000,
@@ -36,9 +39,23 @@ module.exports = {
             }
           }
         },
+        {
+          test: /\.scss$/,
+          use: ['style-loader','css-loader', 'sass-loader'],
+        },
+        {
+          test: /\.css$/,
+          use: ['css-hot-loader', CssExtractPlugin.loader, 'css-loader', 'postcss-loader'],
+        },
       ]
     },
     resolve: {
         extensions: ['*', '.tsx','.jsx', '.js']
-    }
+    },
+    plugins: [
+      new CssExtractPlugin({
+        filename: '[name].css',
+        chunkFilename: '[name].[id].css',
+    }),
+  ]
 };
