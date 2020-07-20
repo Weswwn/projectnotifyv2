@@ -5,6 +5,7 @@
   "main": "webpack.config.js",
   "dependencies": {
     "babel-preset-react": "^6.24.1",
+    "cheerio": "^1.0.0-rc.3",
     "css-hot-loader": "^1.4.4",
     "formik": "^2.1.4",
     "nodemon": "^2.0.4",
