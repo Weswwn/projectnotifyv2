@@ -47,6 +47,14 @@ module.exports = {
           test: /\.css$/,
           use: ['css-hot-loader', CssExtractPlugin.loader, 'css-loader', 'postcss-loader'],
         },
+        {
+          test: /\.(png|jpe?g|gif)$/i,
+          use: [
+            {
+              loader: 'file-loader',
+            }
+          ]
+        }
       ]
     },
     resolve: {

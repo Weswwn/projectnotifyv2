@@ -10,7 +10,6 @@ export const Form = () => {
 
     return (
         <div id="form-container">
-            <h2>Register to be notified when the course you want has a spot available!</h2>
             <Formik 
                 initialValues={{subjectCode: '', subjectNumber: '', sectionNumber: '', user: ''}}
                 validate = {values => {
@@ -42,7 +41,7 @@ export const Form = () => {
                 }) => (
                     <div className='input-field-container'>
                         <form onSubmit={handleSubmit}>
-                        <div>Please Enter the Course That You Want To Be Notified For</div>
+                        <div className="form-course-title">Please Enter the Course That You Want To Be Notified For</div>
                             <div>
                                 <input
                                     className="input-fields"
@@ -51,7 +50,7 @@ export const Form = () => {
                                     name="subjectCode"
                                     onChange={handleChange}
                                     onBlur={handleBlur}
-                                    value={values.subjectCode}
+                                    value={values.subjectCode.toUpperCase()}
                                     pattern="[A-Za-z]{3,4}"
                                     required
                                 />
@@ -62,7 +61,7 @@ export const Form = () => {
                                     name="subjectNumber"
                                     onChange={handleChange}
                                     onBlur={handleBlur}
-                                    value={values.subjectNumber}
+                                    value={values.subjectNumber.toUpperCase()}
                                     pattern="[A-Za-Z0-9]{3,4}"
                                     required
                                 />
@@ -73,7 +72,7 @@ export const Form = () => {
                                     name="sectionNumber"
                                     onChange={handleChange}
                                     onBlur={handleBlur}
-                                    value={values.sectionNumber}
+                                    value={values.sectionNumber.toUpperCase()}
                                     required
                                 />
                                 <div>
@@ -87,6 +86,7 @@ export const Form = () => {
                                     onChange={handleChange}
                                     onBlur={handleBlur}
                                     value={values.user}
+                                    pattern="[0-9]"
                                     required
                                 />
                             </div>

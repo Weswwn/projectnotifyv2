@@ -1,8 +1,63 @@
 .app-header {
     text-align: center;
     height: 100px;
+    width: 100%;
+    background-color: white;
+    color: #0e6c9d;
+    font-family: Arial, sans-serif;
 }
 
 .app-container {
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-family: Arial, sans-serif;
+}
+
+.form-app-container {
+    // margin-top: 600px;
+    text-align: left;
+    margin-left: 150px;
+}
+
+.homepage-information-container {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: row;
+    width:90%;
+    margin-top: 500px;
+    height:100px;
+    padding: 40px;
+    h1 {
+        color: #0e6c9d;
+    }
+
+    .welcome-text-section-container {
+        flex-basis: 60%;
+        margin-right: 20px;
+
+    }
+
+    .dev-updates-container {
+        // flex-basis: 100%;
+        margin-left: 100px;
+    }
+}
+
+.get-registered-button {
+    // display: inline-block;
+    cursor: pointer;
+    padding: 1rem;
+    margin-right: 1rem;
+    background: #ff8900;
+    text-decoration: none;
+    color: #fff3e6;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-shadow: 1px 1px #e27900;
+    border-bottom: solid .2rem #e27900;
+    border-top: solid .2rem transparent;
+    transition: all .5s;
+    margin-left: 40px;
+    margin-top: 30px;
+}
+.get-registered-button:hover {
+    background: #faa544;
 }
