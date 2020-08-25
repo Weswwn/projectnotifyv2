@@ -13,7 +13,8 @@ export const Form = () => {
 
     return (
         <div id="form-parent-container">
-            <div>
+            {/* <img style={{width: '100%'}}src={headerImage}></img> */}
+            <div className="form-content">
                 <Formik 
                     initialValues={{subjectCode: '', subjectNumber: '', sectionNumber: '', user: ''}}
                     validate = {values => {
@@ -45,7 +46,7 @@ export const Form = () => {
                     }) => (
                         <div className='input-field-container'>
                             <form onSubmit={handleSubmit}>
-                            <h3 className="form-course-title">Please Enter the Course That You Want To Be Notified For</h3>
+                            <h3 className="form-title">Course Information</h3>
                                 <div>
                                     <input
                                         className="input-fields"
@@ -81,7 +82,7 @@ export const Form = () => {
                                     />
                                     <div>
 
-                                    <h3>Please Enter the Phone Number You Would Like to Receive the Notification With</h3>
+                                    <h3 className="form-title" style={{marginTop: '50px'}}>Phone Number</h3>
                                     <input
                                         className="input-fields"
                                         placeholder= 'Phone Number'
@@ -95,7 +96,7 @@ export const Form = () => {
                                     />
                                 </div>
                                     </div>
-                                <button type="submit" disabled={isSubmitting}>
+                                <button className="submit-button"type="submit" disabled={isSubmitting}>
                                     Submit
                                 </button>
                                 <div>{registerResponse}</div>

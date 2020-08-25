@@ -16,6 +16,7 @@ import { Homepage } from './components/HomePage/Homepage';
 
 export const App = () => {
     return (
+        <>
         <div id='app-container'>
             <MainHeader />
              <Router>
@@ -29,7 +30,8 @@ export const App = () => {
                     </Route>
                 </Switch>
             </Router>
-            <MainFooter />
         </div>
+        <MainFooter />
+        </>
     )
 }

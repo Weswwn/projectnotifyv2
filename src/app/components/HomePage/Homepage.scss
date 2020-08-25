@@ -1,11 +1,5 @@
-body {
-    margin: 0;
-    padding: 0;
-}
-
 #homepage-container {
-    margin-bottom: 50px;
-
+    min-height: calc(100vh - 200px - 200px);
     .homepage-content-container {
         margin-bottom: 90px;
         @media screen and (max-width: 767px) {
@@ -19,7 +13,7 @@ body {
         margin-bottom: 50px;
         padding: 0 40px 20px 40px;
         h1 {
-            color: #0e6c9d;
+            color: #ff8900;
         }
 
         .welcome-text-section-container {
@@ -33,7 +27,7 @@ body {
     
         .dev-updates-container {
             margin-left: 100px;
-            
+
             @media screen and (max-width: 767px) {
                 margin-left: 0px;
             }
@@ -48,31 +42,5 @@ body {
                 text-align: center;
             }
         }
-    }
-
-    .get-registered-button {
-        cursor: pointer;
-        padding: 1rem;
-        margin-right: 1rem;
-        background: #ff8900;
-        text-decoration: none;
-        color: #fff3e6;
-        font-size: 1.2rem;
-        font-weight: bold;
-        text-shadow: 1px 1px #e27900;
-        border-bottom: solid .2rem #e27900;
-        border-top: solid .2rem transparent;
-        transition: all .5s;
-        margin-left: 40px;
-        @media screen and (max-width: 767px) {
-                margin-left: 0px;
-            }
-    }
-    .get-registered-button:hover {
-        background: #faa544;
-    }
-
-    .register-button-container {
-        position:relative;
     }
 }

@@ -1,0 +1,22 @@
+.get-registered-button {
+    cursor: pointer;
+    padding: 1rem;
+    margin-right: 1rem;
+    background: #ff8900;
+    text-decoration: none;
+    color: #fff3e6;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-shadow: 1px 1px #e27900;
+    border-bottom: solid .2rem #e27900;
+    border-top: solid .2rem transparent;
+    transition: all .5s;
+    margin-left: 40px;
+
+    @media screen and (max-width: 767px) {
+            margin-left: 0px;
+        }
+}
+.get-registered-button:hover {
+    background: #faa544;
+}

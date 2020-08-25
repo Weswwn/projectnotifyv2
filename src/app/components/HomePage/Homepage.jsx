@@ -1,19 +1,18 @@
 import React from 'react';
 
+
 import headerImage from '../../core/assets/images/ubc-wide.jpg'
+
 // styling
 import './Homepage.scss';
 import '../../App.scss';
-import {
-    BrowserRouter as Router,
-    Route,
-    Switch,
-    Link
-} from 'react-router-dom';
 
 // components
+import { RegisterButton } from './components/Buttons/RegisterButton';
 
-export const Homepage = props => {
+
+export const Homepage = () => { 
+    
     return (
         <div id='homepage-container'>
             <img style={{width: '100%'}}src={headerImage}></img>
@@ -34,10 +33,7 @@ export const Homepage = props => {
                         </div>
                     </div>
                 </div>
-                
-                <div className="register-button-container">
-                    <Link className="get-registered-button" to="/form">Click Here to Register</Link>
-                </div>
+                <RegisterButton />
             </div>
         </div>
     )

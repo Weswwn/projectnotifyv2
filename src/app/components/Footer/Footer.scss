@@ -1,9 +1,6 @@
 .main-footer {
-    // position: fixed;
-    height: 150px;
-    bottom:0px;
+    flex-shrink: 0;
     width: 100%;
-    margin-left: 0;
-    margin-right: 0;
+    height: 200px;
     background-color: rgb(25, 28, 51);
 }
