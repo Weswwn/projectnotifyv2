@@ -7,13 +7,14 @@ import './Form.scss';
 import '../../App.scss';
 
 // components
+import { FormDescription } from './components/FormDescription';
 
 export const Form = () => {
     const [registerResponse, setRegisterResponse] = useState('');
 
     return (
         <div id="form-parent-container">
-            {/* <img style={{width: '100%'}}src={headerImage}></img> */}
+            <FormDescription />
             <div className="form-content">
                 <Formik 
                     initialValues={{subjectCode: '', subjectNumber: '', sectionNumber: '', user: ''}}
@@ -91,7 +92,7 @@ export const Form = () => {
                                         onChange={handleChange}
                                         onBlur={handleBlur}
                                         value={values.user}
-                                        pattern="[0-9]"
+                                        // pattern="[0-9]"
                                         required
                                     />
                                 </div>
