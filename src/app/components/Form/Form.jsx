@@ -7,14 +7,16 @@ import './Form.scss';
 import '../../App.scss';
 
 // components
-import { FormDescription } from './components/FormDescription';
+import { FormDescription } from './components/form-description/FormDescription';
+import { Toaster } from './components/toaster-notification/Toaster';
 
 export const Form = () => {
-    const [registerResponse, setRegisterResponse] = useState('');
-
+    const [registerResponse, setRegisterResponse] = useState({});
+    console.log(registerResponse);
     return (
         <div id="form-parent-container">
             <FormDescription />
+            <Toaster {...registerResponse}/>
             <div className="form-content">
                 <Formik 
                     initialValues={{subjectCode: '', subjectNumber: '', sectionNumber: '', user: ''}}
@@ -23,16 +25,10 @@ export const Form = () => {
 
                         return errors
                     }}
-                    onSubmit={(values, { setSubmitting }) => {
-                        courseService.postCourse(values)
-                            .then(res => {
-                                setSubmitting(false);
-                                setRegisterResponse(res.status)
-                            })
-                            .catch(err => {
-                                setSubmitting(false);
-                                setRegisterResponse(err.status)
-                            })
+                    onSubmit= { async (values, { setSubmitting }) => {
+                        const response = await courseService.postCourse(values)
+                        setRegisterResponse(response);
+                        setSubmitting(false)
                     }}
                     >
                     {({
@@ -56,7 +52,7 @@ export const Form = () => {
                                         name="subjectCode"
                                         onChange={handleChange}
                                         onBlur={handleBlur}
-                                        value={values.subjectCode.toUpperCase()}
+                                        value={values.subjectCode.toUpperCase().replace(/\s+/g, '')}
                                         pattern="[A-Za-z]{3,4}"
                                         required
                                     />
@@ -67,8 +63,8 @@ export const Form = () => {
                                         name="subjectNumber"
                                         onChange={handleChange}
                                         onBlur={handleBlur}
-                                        value={values.subjectNumber.toUpperCase()}
-                                        pattern="[A-Za-Z0-9]{3,4}"
+                                        value={values.subjectNumber.toUpperCase().replace(/\s+/g, '')}
+                                        pattern="[a-zA-Z0-9]+"
                                         required
                                     />
                                     <input
@@ -78,7 +74,7 @@ export const Form = () => {
                                         name="sectionNumber"
                                         onChange={handleChange}
                                         onBlur={handleBlur}
-                                        value={values.sectionNumber.toUpperCase()}
+                                        value={values.sectionNumber.toUpperCase().replace(/\s+/g, '')}
                                         required
                                     />
                                     <div>
@@ -87,12 +83,12 @@ export const Form = () => {
                                     <input
                                         className="input-fields"
                                         placeholder= 'Phone Number'
-                                        type="user"
+                                        type="number"
                                         name="user"
                                         onChange={handleChange}
                                         onBlur={handleBlur}
                                         value={values.user}
-                                        // pattern="[0-9]"
+                                        pattern="[0-9]"
                                         required
                                     />
                                 </div>
@@ -100,7 +96,6 @@ export const Form = () => {
                                 <button className="submit-button"type="submit" disabled={isSubmitting}>
                                     Submit
                                 </button>
-                                <div>{registerResponse}</div>
                             </form>
                         </div>
                     )}

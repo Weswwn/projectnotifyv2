@@ -4,9 +4,9 @@ import React from 'react';
 import './FormDescription.scss';
 
 // Images
-import studentImg from '../../../core/assets/images/description-images/student.png';
-import hackerImg from '../../../core/assets/images/description-images/hacker.png';
-import textMessage from '../../../core/assets/images/description-images/text-message.png';
+import studentImg from '../../../../core/assets/images/description-images/student.png';
+import hackerImg from '../..//../../core/assets/images/description-images/hacker.png';
+import textMessage from '../../../../core/assets/images/description-images/text-message.png';
 
 export const FormDescription = () => {
     return (
