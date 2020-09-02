@@ -13,11 +13,13 @@ import './App.scss';
 // components
 import { Form } from './components/Form/Form';
 import { Homepage } from './components/HomePage/Homepage';
+import {Toaster} from './components/Form/components/toaster-notification/Toaster';
 
 export const App = () => {
     return (
         <>
         <div id='app-container'>
+            <Toaster />
             <MainHeader />
              <Router>
                 <Route exact path="/">

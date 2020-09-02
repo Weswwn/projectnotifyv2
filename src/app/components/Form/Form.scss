@@ -20,8 +20,8 @@
 
         .input-fields{
             border:0;
-            border-bottom: 1px solid grey;
-            padding: 25px 0 0 0;
+            border-bottom: 1px solid #B5B7B5;
+            padding: 25px 0 5px 5px;
             width: 200px;
             margin-right:10px;
             margin-bottom: 10px;
@@ -32,7 +32,7 @@
             }
         }
         .input-fields:focus, .input-fields:active {
-            background: transparent;
+            background: none;
         }
     }
     

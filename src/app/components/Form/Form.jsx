@@ -8,7 +8,7 @@ import '../../App.scss';
 
 // components
 import { FormDescription } from './components/form-description/FormDescription';
-import { Toaster } from './components/toaster-notification/Toaster';
+import {Toaster} from './components/toaster-notification/Toaster';
 
 export const Form = () => {
     const [registerResponse, setRegisterResponse] = useState({});
@@ -16,7 +16,6 @@ export const Form = () => {
     return (
         <div id="form-parent-container">
             <FormDescription />
-            <Toaster {...registerResponse}/>
             <div className="form-content">
                 <Formik 
                     initialValues={{subjectCode: '', subjectNumber: '', sectionNumber: '', user: ''}}
@@ -28,6 +27,7 @@ export const Form = () => {
                     onSubmit= { async (values, { setSubmitting }) => {
                         const response = await courseService.postCourse(values)
                         setRegisterResponse(response);
+                        Toaster.show(response);
                         setSubmitting(false)
                     }}
                     >
@@ -83,7 +83,7 @@ export const Form = () => {
                                     <input
                                         className="input-fields"
                                         placeholder= 'Phone Number'
-                                        type="number"
+                                        // type="number"
                                         name="user"
                                         onChange={handleChange}
                                         onBlur={handleBlur}

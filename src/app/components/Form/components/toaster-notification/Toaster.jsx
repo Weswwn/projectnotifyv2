@@ -1,11 +1,47 @@
 import React from 'react';
 
-export const Toaster = props => {
-    console.log(props)
-    return (
-    <div>
-        {props.status === 'success' ? <div style={{backgroundColor: 'green'}}>{props.msg}</div> : 
-        <div style={{backgroundColor: 'red'}}>{props.msg}</div>}
-    </div>
-    )
+// styling
+import './Toaster.scss';
+
+export class Toaster extends React.Component {
+    static show(response) {
+        Toaster.__singletonRef.__show(response);
+    }
+
+    static hide() {
+        Toaster.__singletonRef.__hide();
+    }
+
+    constructor(props) {
+        super(props)
+        Toaster.__singletonRef = this;
+        this.state = {
+            status: null,
+            message: '',
+        }
+        console.log(this.props);
+    }
+
+    __show(response) {
+        this.setState({
+            status: response.status,
+            message: response.msg
+        })
+        setInterval(() => this.__hide(), 15000);
+    }
+
+    __hide() {
+        this.setState({
+            status: null,
+            message: '',
+        })
+    }
+    render() {
+        const notificationColor = this.state.status == 'success' ? '#6FF06B' : this.state.status == 'failed' ? '#F0776B' : '';
+        return (
+            <div id="toaster-main-container" style={{backgroundColor: notificationColor}}>
+                {this.state.message}
+            </div>
+        )
+    }
 }

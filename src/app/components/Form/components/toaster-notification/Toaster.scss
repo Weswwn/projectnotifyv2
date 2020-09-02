@@ -1,0 +1,13 @@
+#toaster-main-container {
+    display: flex;
+    height: 70px;
+    padding: 5px 5px 5px 5px;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
