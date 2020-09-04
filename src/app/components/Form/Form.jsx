@@ -87,6 +87,7 @@ export const Form = () => {
                                     <div>
 
                                     <h3 className="form-title" style={{marginTop: '50px'}}>Phone Number</h3>
+                                    <h4 style={{fontSize: '12px', color: '#F0776B'}}>At this time, we only accept Canadian and American numbers</h4>
                                     <input
                                         className="input-fields"
                                         placeholder= 'Phone Number'
