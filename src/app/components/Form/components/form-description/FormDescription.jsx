@@ -25,7 +25,8 @@ export const FormDescription = () => {
             <div className="description-content">
                 <img style={{height: '50px', width:'50px'}}src={textMessage}></img>
                 <div className="description-text" >A SMS text message gets sent to you as soon as 
-                we detect that a spot has opened up with a direct URL to the course
+                we detect that a spot has opened up with a direct URL to the course. After a notification is sent,
+                your phone number will be taken off of the list. To re-register, re-enter your information into the form
                 </div>
             </div>
         </div>
