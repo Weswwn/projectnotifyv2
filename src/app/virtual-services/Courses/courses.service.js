@@ -16,7 +16,7 @@ class CourseService {
                     subjectCode: params.subjectCode.toUpperCase(),
                     subjectNumber: params.subjectNumber.toUpperCase(),
                     sectionNumber: params.sectionNumber.toUpperCase(),
-                    users: params.user
+                    users: `+${params.user}`
                 })
             })
             return await response.json();
