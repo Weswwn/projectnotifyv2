@@ -27,7 +27,7 @@ export class Toaster extends React.Component {
             status: response.status,
             message: response.msg
         })
-        setInterval(() => this.__hide(), 15000);
+        // setTimeout(() => this.__hide(), 5000);
     }
 
     __hide() {

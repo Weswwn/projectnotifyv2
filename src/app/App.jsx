@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import {
     BrowserRouter as Router,
     Route,
@@ -16,6 +16,9 @@ import { Homepage } from './components/HomePage/Homepage';
 import {Toaster} from './components/Form/components/toaster-notification/Toaster';
 
 export const App = () => {
+    useEffect(() => {
+        Toaster.hide();
+    })
     return (
         <>
         <div id='app-container'>
