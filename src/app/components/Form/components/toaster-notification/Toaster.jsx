@@ -3,6 +3,8 @@ import React from 'react';
 // styling
 import './Toaster.scss';
 
+import closeIcon from '../../../../core/assets/images/close.png';
+
 export class Toaster extends React.Component {
     static show(response) {
         Toaster.__singletonRef.__show(response);
@@ -18,29 +20,32 @@ export class Toaster extends React.Component {
         this.state = {
             status: null,
             message: '',
+            display: 'none'
         }
-        console.log(this.props);
+        this.__hide = this.__hide.bind(this)
     }
 
     __show(response) {
         this.setState({
             status: response.status,
-            message: response.msg
+            message: response.msg,
+            display: 'flex'
         })
-        // setTimeout(() => this.__hide(), 5000);
     }
 
     __hide() {
         this.setState({
             status: null,
             message: '',
+            display:'none'
         })
     }
     render() {
         const notificationColor = this.state.status == 'success' ? '#6FF06B' : this.state.status == 'failed' ? '#F0776B' : '';
         return (
-            <div id="toaster-main-container" style={{backgroundColor: notificationColor}}>
+            <div id="toaster-main-container" style={{display: `${this.state.display}`, backgroundColor: notificationColor}}>
                 {this.state.message}
+                <button className="toaster-close-button-icon"  onClick={this.__hide}><img style={{height: '20px', width:'20px'}}src={closeIcon}/></button>
             </div>
         )
     }
