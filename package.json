@@ -8,11 +8,14 @@
     "cheerio": "^1.0.0-rc.3",
     "css-hot-loader": "^1.4.4",
     "formik": "^2.1.4",
+    "libphonenumber-js": "^1.7.57",
     "nodemon": "^2.0.4",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-phone-number-input": "^3.0.25",
     "react-router": "^5.2.0",
-    "react-router-dom": "^5.2.0"
+    "react-router-dom": "^5.2.0",
+    "yup": "^0.29.3"
   },
   "devDependencies": {
     "@babel/core": "^7.10.3",

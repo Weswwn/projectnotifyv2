@@ -16,12 +16,12 @@ class CourseService {
                     subjectCode: params.subjectCode.toUpperCase(),
                     subjectNumber: params.subjectNumber.toUpperCase(),
                     sectionNumber: params.sectionNumber.toUpperCase(),
-                    users: params.user
+                    users: `+1${params.user}`
                 })
             })
             return await response.json();
         } catch(error) {
-            return {status: 'failed', msg: 'This shit failed, bro'};
+            return {status: 'failed', msg: 'Something went wrong. Please send us an email to contact our engineers.'};
         }
     }
     async getCourse() {

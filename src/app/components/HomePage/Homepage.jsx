@@ -21,15 +21,18 @@ export const Homepage = () => {
 
                 <div className="homepage-information-container">
                     <div className="welcome-text-section-container">
-                        <h1>Our Mission</h1>
+                        <h1>Purpose</h1>
                         <div>
-                        Eos admodum propriae perpetua at, pro zril bonorum an, ea ius autem minim praesent. Vel cu munere accommodare, ad vim alia error deleniti. Ne elit deterruisset eam, mei ex persius fabellas. Habeo harum pri ea, fastidii partiendo at mea, aperiri dolorem percipit ne sea. Qui probo augue populo et, civibus delicatissimi eu nec. Aeque accommodare vix an, iudico senserit at per, soluta recusabo cu vel. Atqui putant mel id, per adhuc ancillae rationibus ne.
+                        Welcome to Project Notify aka UBC Course Tracker. The goal is simple. Help you 
+                        get into the course that you want FOR FREE (...currently). As Alumni, we understand the pain
+                        of manually refreshing the same course page over and over again. Using our website, we take care of this problem for you.
                         </div>
                     </div>
                     <div className="dev-updates-container">
                         <h1>Developer Updates</h1>
                         <div>
-                            Move this to a separate isolated component
+                            As of current, we only support American and Canadian phone numbers. Please do not include the +1 in your phone number
+                            when filling out the form. 
                         </div>
                     </div>
                 </div>

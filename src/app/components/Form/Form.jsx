@@ -1,5 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import { Formik } from 'formik';
+
+//services
 import {courseService} from '../../virtual-services/Courses/courses.service';
 
 // styling
@@ -13,18 +15,23 @@ import {Toaster} from './components/toaster-notification/Toaster';
 export const Form = () => {
     const [registerResponse, setRegisterResponse] = useState({});
     console.log(registerResponse);
+
     return (
         <div id="form-parent-container">
             <FormDescription />
             <div className="form-content">
                 <Formik 
+                    validateOnChange={false}
+                    validateOnBlur={false}
                     initialValues={{subjectCode: '', subjectNumber: '', sectionNumber: '', user: ''}}
                     validate = {values => {
+                        console.log('validate check:', values.user);
                         const errors = {};
 
                         return errors
                     }}
                     onSubmit= { async (values, { setSubmitting }) => {
+                        setSubmitting(true);
                         const response = await courseService.postCourse(values)
                         setRegisterResponse(response);
                         Toaster.show(response);
@@ -80,17 +87,19 @@ export const Form = () => {
                                     <div>
 
                                     <h3 className="form-title" style={{marginTop: '50px'}}>Phone Number</h3>
+                                    <h4 style={{fontSize: '12px', color: '#F0776B'}}>At this time, we only accept Canadian and American numbers</h4>
                                     <input
                                         className="input-fields"
                                         placeholder= 'Phone Number'
-                                        // type="number"
+                                        type="tel"
                                         name="user"
                                         onChange={handleChange}
                                         onBlur={handleBlur}
                                         value={values.user}
-                                        pattern="[0-9]"
+                                        pattern="[0-9]{3}[0-9]{3}[0-9]{4}"
                                         required
                                     />
+                                    {errors.user}
                                 </div>
                                     </div>
                                 <button className="submit-button"type="submit" disabled={isSubmitting}>
