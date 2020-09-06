@@ -2,12 +2,14 @@ import React, { useEffect } from 'react';
 import {
     BrowserRouter as Router,
     Route,
+    Redirect,
     Switch,
     Link
 } from 'react-router-dom';
 
 import { MainFooter } from './components/Footer/MainFooter';
 import { MainHeader } from './components/Header/MainHeader';
+import ScrollToTop from './ScrollToTop';
 import './App.scss';
 
 // components
@@ -25,6 +27,7 @@ export const App = () => {
             <Toaster />
             <MainHeader />
              <Router>
+                <ScrollToTop />
                 <Route exact path="/">
                     <Homepage />
                 </Route>
@@ -34,6 +37,7 @@ export const App = () => {
                         <Form/>
                     </Route>
                 </Switch>
+                <Redirect from="*" to="/" />
             </Router>
         </div>
         <MainFooter />
