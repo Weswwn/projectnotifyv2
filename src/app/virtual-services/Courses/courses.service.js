@@ -1,7 +1,7 @@
 import "@babel/polyfill";
 
 
-const baseURL = `http://localhost:8000/api/course/`;
+const baseURL = `${process.env.ORIGIN}/api/course/`;
 class CourseService {
     async postCourse(params) {
         try {
@@ -10,7 +10,7 @@ class CourseService {
                 headers: {
                     'Accept': 'application/json',
                     'Content-Type': 'application/json',
-                    'Origin': 'http://localhost:3000/'
+                    'Origin': `${process.env.ORIGIN}/`
                 },
                 body: JSON.stringify({
                     subjectCode: params.subjectCode.toUpperCase(),

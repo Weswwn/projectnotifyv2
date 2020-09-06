@@ -7,6 +7,7 @@
     "babel-preset-react": "^6.24.1",
     "cheerio": "^1.0.0-rc.3",
     "css-hot-loader": "^1.4.4",
+    "dotenv-webpack": "^2.0.0",
     "formik": "^2.1.4",
     "libphonenumber-js": "^1.7.57",
     "nodemon": "^2.0.4",

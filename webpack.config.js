@@ -1,6 +1,7 @@
 const path = require('path');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
+const Dotenv = require('dotenv-webpack');
 
 // plugins
 const CssExtractPlugin = require('mini-css-extract-plugin');
@@ -69,9 +70,10 @@ module.exports = {
       new CssExtractPlugin({
         filename: '[name].css',
         chunkFilename: '[name].[id].css',
-    }),
+      }),
       new HtmlWebpackPlugin({
         template: 'src/index.html',
-      })
+      }),
+      new Dotenv()
   ]
 };
