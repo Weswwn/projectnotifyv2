@@ -39,7 +39,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "webpack:dev": "node --max-old-space-size=4096 node_modules/.bin/webpack-dev-server --mode=development --color --progress",
-    "start:local": "npm run webpack:dev"
+    "start:local": "npm run webpack:dev",
+    "start:build": "webpack -p"
   },
   "repository": {
     "type": "git",
