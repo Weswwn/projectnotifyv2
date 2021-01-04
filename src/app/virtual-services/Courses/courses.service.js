@@ -2,7 +2,6 @@ import "@babel/polyfill";
 
 
 const baseURL = `${process.env.ORIGIN}/api/course/`;
-console.log(process.env.ORIGIN, process.env)
 class CourseService {
     async postCourse(params) {
         try {
