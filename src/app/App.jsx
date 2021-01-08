@@ -15,7 +15,7 @@ import './App.scss';
 // components
 import { Form } from './components/Form/Form';
 import { Homepage } from './components/HomePage/Homepage';
-import {Toaster} from './components/Form/components/toaster-notification/Toaster';
+import { Toaster } from './components/Form/components/toaster-notification/Toaster';
 
 export const App = () => {
     useEffect(() => {
@@ -23,24 +23,24 @@ export const App = () => {
     })
     return (
         <>
-        <div id='app-container'>
-            <Toaster />
-            <MainHeader />
-             <Router>
-                <ScrollToTop />
-                <Route exact path="/">
-                    <Homepage />
-                </Route>
-
-                <Switch>
-                    <Route path="/form">
-                        <Form/>
+            <div id='app-container'>
+                <Toaster />
+                <MainHeader />
+                <Router>
+                    <ScrollToTop />
+                    <Route exact path="/">
+                        <Homepage />
                     </Route>
-                </Switch>
-                <Redirect from="*" to="/" />
-            </Router>
-        </div>
-        <MainFooter />
+
+                    <Switch>
+                        <Route path="/form">
+                            <Form />
+                        </Route>
+                    </Switch>
+                    <Redirect from="*" to="/" />
+                </Router>
+            </div>
+            <MainFooter />
         </>
     )
 }
