@@ -11,7 +11,7 @@ import '../../App.scss';
 // components
 import { FormDescription } from './components/form-description/FormDescription';
 import { Toaster } from './components/toaster-notification/Toaster';
-import { MainHeader } from '../Header/Mainheader';
+import { MainHeader } from '../Header/MainHeader.jsx';
 
 export const Form = () => {
     const [registerResponse, setRegisterResponse] = useState({});
