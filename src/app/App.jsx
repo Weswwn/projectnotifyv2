@@ -7,7 +7,6 @@ import {
     Link
 } from 'react-router-dom';
 
-import { MainFooter } from './components/Footer/MainFooter';
 import { MainHeader } from './components/Header/MainHeader';
 import ScrollToTop from './ScrollToTop';
 import './App.scss';
@@ -25,10 +24,10 @@ export const App = () => {
         <>
             <div id='app-container'>
                 <Toaster />
-                <MainHeader />
                 <Router>
                     <ScrollToTop />
                     <Route exact path="/">
+                        <MainHeader />
                         <Homepage />
                     </Route>
 
@@ -37,10 +36,9 @@ export const App = () => {
                             <Form />
                         </Route>
                     </Switch>
-                    <Redirect from="*" to="/" />
+                    {/* <Redirect from="*" to="/" /> */}
                 </Router>
             </div>
-            <MainFooter />
         </>
     )
 }

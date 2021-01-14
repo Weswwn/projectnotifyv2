@@ -1,69 +1,59 @@
 #form-parent-container {
-    min-height: calc(100vh - 200px - 200px);
     display: flex;
     flex-direction: row;
 
-    @media screen and (max-width: 767px) {
-        display: flex;
-        flex-direction: column;
+    .form-description-section {
+        max-width: 50%;
+        // min-height: 100%;
+        .form-description-background {
+            height: 100%;
+        }
     }
 
     .form-content {
-        margin-left: 40px;
-        margin-bottom:40px;
-    }
-    h3 {
-        color: #ff8900;
-    }
+        .input-field-container {
+            .input-fields {
+                margin-top: 2rem;
+                margin-left: 1rem;
+                height: 2rem;
+                border-bottom: 1px solid black;
+                cursor: text;
+                text-transform: none;
+                appearance: textfield;
 
-    .input-field-container {
+            }
 
-        .input-fields{
-            border:0;
-            border-bottom: 1px solid #B5B7B5;
-            padding: 25px 0 5px 5px;
-            width: 200px;
-            margin-right:10px;
-            margin-bottom: 10px;
-            outline: none;
-            font-size: 15px;
-            @media screen and (max-width: 767px) {
-                width: 80%;
+            .submit-button {
+                border: 2px solid black;
+                padding: 0.5rem 2.5rem 0.5rem 2.5rem;
+                font-size:20px;
+                border-radius: 4px;
+            }
+
+            .submit-button:hover {
+                border: 3px solid black;
+                color:Gray;
             }
         }
-        .input-fields:focus, .input-fields:active {
-            background: none;
+    }
+}
+
+@media screen and (max-width: 1140px) {
+    #form-parent-container {
+        flex-direction: column;
+        // background-color: black;
+        align-items: center;
+
+        .form-description-section {
+            max-width: 100%;
+        }
+        .form-content {
+            display: flex;
+            flex-direction: column;
+            padding-top: 1rem;
+            text-align: center;
+            padding-bottom: 2rem;
+            padding-left: 0;
         }
     }
-    
-    .form-title {
-        font-size: 22px;
-        margin-bottom:5px;
-    }
-
-    .submit-button {
-        cursor: pointer;
-        padding: 1rem;
-        margin-right: 1rem;
-        background: #f4978e;
-        text-decoration: none;
-        color: #fff3e6;
-        font-size: 1.2rem;
-        font-weight: bold;
-        text-shadow: 1px 1px #f4978e;
-        border-bottom: solid .2rem #e27900;
-        border-right: transparent;
-        border-left: transparent;
-        border-top: solid .2rem #e27900;
-        transition: all .5s;
-        width: 190px;
-        margin-top: 40px;
-        @media screen and (max-width: 767px) {
-                margin-left: 0px;
-            }
-    }
-    .submit-button:hover {
-        background: #e8a29c;
-    }
-
 }
