@@ -11,6 +11,8 @@ export const RegisterButton = () => {
         history.push('/form');
     }
     return (
-        <button className="get-registered-button" type='button' onClick={handleClick}>Register Button</button>
+        <div className="homepage-button-container tw-ml-16 tw-mt-8 fadeInLeft">
+            <button className="get-registered-button" type='button' onClick={handleClick}>TRACK NOW</button>
+        </div>
     )
 }
