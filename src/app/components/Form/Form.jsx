@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { Formik } from 'formik';
+import { Formik, ErrorMessage } from 'formik';
+import "@babel/polyfill";
 
 //services
 import { courseService } from '../../virtual-services/Courses/courses.service';
@@ -12,10 +13,18 @@ import '../../App.scss';
 import { FormDescription } from './components/form-description/FormDescription';
 import { Toaster } from './components/toaster-notification/Toaster';
 import { MainHeader } from '../Header/MainHeader.jsx';
+import ReCAPTCHA from 'react-google-recaptcha';
 
 export const Form = () => {
     const [registerResponse, setRegisterResponse] = useState({});
-    console.log(registerResponse);
+    const [validated, setValidated] = useState(false);
+    const recaptchaRef = React.createRef();
+
+    const onChange = (value) => {
+        if (value) {
+            setValidated(true);
+        }
+    }
 
     return (
         <div id="form-parent-container">
@@ -31,9 +40,12 @@ export const Form = () => {
                     validateOnBlur={false}
                     initialValues={{ subjectCode: '', subjectNumber: '', sectionNumber: '', user: '' }}
                     validate={values => {
-                        console.log('validate check:', values.user);
                         const errors = {};
-
+                        if (!validated) {
+                            errors.user = 'Must pass CAPTCHA test'
+                        }
+                        setValidated(false);
+                        recaptchaRef.current.reset();
                         return errors
                     }}
                     onSubmit={async (values, { setSubmitting }) => {
@@ -42,6 +54,8 @@ export const Form = () => {
                         setRegisterResponse(response);
                         Toaster.show(response);
                         setSubmitting(false)
+                        setValidated(false);
+                        recaptchaRef.current.reset();
                     }}
                 >
                     {({
@@ -108,12 +122,22 @@ export const Form = () => {
                                             pattern="[0-9]{3}[0-9]{3}[0-9]{4}"
                                             required
                                         />
-                                        {errors.user}
                                     </div>
                                 </div>
-                                <button className="submit-button fadeInLeft tw-mt-8 tw-text-3xl" type="submit" disabled={isSubmitting}>
-                                    Submit
-                                </button>
+                                <div className="form-submission-section tw-flex tw-flex-row">
+                                    <ReCAPTCHA className="tw-mt-8 tw-ml-4"
+                                        ref={recaptchaRef}
+                                        // size='normal'
+                                        sitekey="6LclIy0aAAAAAMeeKT6KtYujxV7tQttlFDiZxBxW                                        "
+                                        onChange={onChange}
+                                    />
+                                    <button className="submit-button fadeInLeft tw-mt-8 tw-text-3xl" type="submit" disabled={isSubmitting}>
+                                        Submit
+                                    </button>
+                                </div>
+                                <div className="tw-text-red-500">
+                                    <ErrorMessage name="user" />
+                                </div>
                             </form>
                         </div>
                     )}

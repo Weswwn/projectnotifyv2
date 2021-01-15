@@ -20,8 +20,8 @@ class CourseService {
                 })
             })
             return await response.json();
-        } catch(error) {
-            return {status: 'failed', msg: 'Something went wrong. Please send us an email to contact our engineers.'};
+        } catch (error) {
+            return { status: 'failed', msg: 'Something went wrong. Please send us an email to contact our engineers.' };
         }
     }
     async getCourse() {
