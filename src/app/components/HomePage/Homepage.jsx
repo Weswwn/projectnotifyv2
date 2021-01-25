@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 
 import backgroundImage from '../../core/assets/images/backgroundImage.jpg';
@@ -10,9 +10,23 @@ import '../../App.scss';
 // components
 import { RegisterButton } from './components/Buttons/RegisterButton';
 
+// services
+import { courseService } from '../../virtual-services/Courses/courses.service';
 
-{/* <RegisterButton /> */ }
 export const Homepage = () => {
+    const [activeCoursesCount, setActiveCoursesCount] = useState(0);
+
+    useEffect(() => {
+        courseService.getActiveUserCourseCount()
+            .then(res => {
+                if (res?.data) {
+                    setActiveCoursesCount(res.data);
+                }
+            })
+            .catch(err => {
+                setActiveCoursesCount('N/A. Maintenance In Progress')
+            })
+    }, [])
 
     return (
         <div className="tw-pt-32" id='homepage-container' style={{ backgroundImage: `url(${backgroundImage})` }}>
@@ -31,6 +45,8 @@ export const Homepage = () => {
                     <div className="homepage-dev-updates-text fadeInUp tw-mt-4">
                         As of current, we only support American and Canadian phone numbers. Please do not include the +1 in your phone number when filling out the form.
                     </div>
+                    <h2 className="homepage-stats tw-text-black fadeInUp tw-text-1xl tw-mt-8">Actively Tracking: <span className="tw-text-2xl tw-text-red-800">{activeCoursesCount}</span> course(s)</h2>
+                    {/* <h2 className="homepage-stats tw-text-black fadeInUp tw-text-1xl">Total Notifications Sent: <span className="tw-text-red-800 tw-text-2xl">10</span></h2> */}
                 </div>
             </div>
             <RegisterButton />
