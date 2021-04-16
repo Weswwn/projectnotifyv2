@@ -32,11 +32,14 @@ class CourseService {
     }
 
     async getTrackingStats() {
-        const response = await fetch(`${baseURL}usercourse/`, {
-            method: 'GET',
-        })
-
-        return await response.json();
+        try {
+            const response = await fetch(`${baseURL}usercourse/`, {
+                method: 'GET',
+            })
+            return await response.json();
+        } catch (error) {
+            return error
+        }
     }
 }
 export const courseService = new CourseService();
