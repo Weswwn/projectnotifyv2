@@ -20,14 +20,22 @@ class CourseService {
                 })
             })
             return await response.json();
-        } catch(error) {
-            return {status: 'failed', msg: 'Something went wrong. Please send us an email to contact our engineers.'};
+        } catch (error) {
+            return { status: 'failed', msg: 'Something went wrong. Please send us an email to contact our engineers.' };
         }
     }
     async getCourse() {
-        let response = await fetch(baseURL, {
+        const response = await fetch(baseURL, {
             method: 'GET',
         })
+        return await response.json();
+    }
+
+    async getTrackingStats() {
+        const response = await fetch(`${baseURL}usercourse/`, {
+            method: 'GET',
+        })
+
         return await response.json();
     }
 }
