@@ -24,12 +24,12 @@ export function Home() {
     }
 
     return (
-        <div className='tw-flex tw-relative tw-h-full tw-flex-col tw-bg-no-repeat tw-bg-cover tw-justify-center tw-items-center tw-bg-gradient-to-bl' style={{ backgroundImage: `url(${backgroundImage})` }}>
+        <div className='tw-flex tw-relative tw-min-w-[390px] tw-h-full tw-flex-col tw-bg-no-repeat tw-bg-cover tw-justify-center tw-items-center tw-bg-gradient-to-bl' style={{ backgroundImage: `url(${backgroundImage})` }}>
             <div className='tw-bg-opacity-10 tw-bg-red-400 tw-w-full tw-h-full tw-absolute tw-pointer-events-none'></div>
             <div className='tw-flex tw-flex-col tw-justify-between'>
                 <div className='tw-flex tw-flex-col tw-justify-center tw-items-center'>
-                    <label className='tw-flex tw-mb-4 tw-text-5xl tw-font-bold tw-text-white'>UBC COURSE TRACKER</label>
-                    <label className='tw-flex tw-mb-4 tw-text-2xl tw-font-thin tw-text-white'>Track the course you need<label className='tw-font-extrabold'>. Completely Free.</label></label>
+                    <label className='tw-flex tw-text-center tw-mb-4 tw-text-5xl tw-font-bold tw-text-white'>UBC COURSE TRACKER. </label>
+                    <label className='tw-flex tw-mb-4 tw-text-2xl tw-font-thin tw-text-white tw-flex-wrap tw-justify-center'>Track the course you need. <label className='tw-font-extrabold'>Completely Free.</label></label>
                     <Button type='primary' className='animationFadeIn fadeIn' label={'TRACK NOW'} onClick={handleClick} />
                 </div>
 

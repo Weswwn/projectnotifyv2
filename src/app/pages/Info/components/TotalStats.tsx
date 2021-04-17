@@ -19,7 +19,7 @@ export function TotalStats() {
 
     return (
         <div className='tw-flex tw-flex-col tw-items-center'>
-            <div className='tw-flex tw-flex-col tw-rounded tw-bg-gray-700 tw-bg-opacity-40 tw-min-h-[300px] tw-min-w-[300px]'>
+            <div className='tw-flex tw-flex-col tw-rounded tw-bg-gray-700 tw-bg-opacity-40 tw-min-h-[300px] tw-w-[400px]'>
                 <h1 className='tw-text-white tw-text-2xl tw-h-16 tw-pl-4 tw-pt-4 tw-bg-red-300 tw-rounded-tl tw-rounded-tr'>STATS TO DATE</h1>
                 <div className='tw-p-8'>
                     <div className='tw-text-left tw-mb-8'>
