@@ -11,14 +11,8 @@ import '../../App.scss';
 
 // components
 import { Toaster } from './components/toaster-notification/Toaster';
-<<<<<<< HEAD:src/app/pages/Form/Form.jsx
 import { Button } from '@atoms/Buttons';
 import { FormDescription } from './components/form-description/FormDescription';
-
-export const Form = () => {
-    const [registerResponse, setRegisterResponse] = useState({});
-=======
-import { MainHeader } from '../Header/MainHeader.jsx';
 import ReCAPTCHA from 'react-google-recaptcha';
 
 export const Form = () => {
@@ -31,7 +25,6 @@ export const Form = () => {
             setValidated(true);
         }
     }
->>>>>>> fb7f3bf57f1a7eb476aa16727f870fa039d806ed:src/app/components/Form/Form.jsx
 
     return (
         <div id="form-parent-container">
@@ -128,29 +121,23 @@ export const Form = () => {
                                         />
                                     </div>
                                 </div>
-<<<<<<< HEAD:src/app/pages/Form/Form.jsx
-                                <Button className='tw-bg-red-400 tw-w-[150px]' disabled={isSubmitting} type='submit' className='fadeInUp' label='SUBMIT' />
-=======
                                 <div className="form-submission-section tw-flex tw-flex-row">
-                                    <ReCAPTCHA className="tw-mt-8 tw-ml-4"
+                                    <ReCAPTCHA className=""
                                         ref={recaptchaRef}
                                         // size='normal'
-                                        sitekey="6LclIy0aAAAAAMeeKT6KtYujxV7tQttlFDiZxBxW                                        "
+                                        sitekey="6LclIy0aAAAAAMeeKT6KtYujxV7tQttlFDiZxBxW"
                                         onChange={onChange}
                                     />
-                                    <button className="submit-button fadeInLeft tw-mt-8 tw-text-3xl" type="submit" disabled={isSubmitting}>
-                                        Submit
-                                    </button>
+                                    <Button className='tw-bg-red-400 tw-h-[75px] tw-w-[150px]' disabled={isSubmitting} type='submit' className='fadeInUp' label='SUBMIT' />
                                 </div>
                                 <div className="tw-text-red-500">
                                     <ErrorMessage name="user" />
                                 </div>
->>>>>>> fb7f3bf57f1a7eb476aa16727f870fa039d806ed:src/app/components/Form/Form.jsx
                             </form>
                         </div>
                     )}
                 </Formik>
             </div>
-        </div>
+        </div >
     )
 }

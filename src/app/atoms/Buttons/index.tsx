@@ -19,7 +19,7 @@ interface Props {
 export const Button = ({ label, onClick, className, type }: Props) => {
     return (
         <div className={`${className}`}>
-            <button className={`tw-cursor-pointer tw-p-4 tw-rounded tw-border-soild tw-border-2 tw-min-w-[125px] ${colorMap[type]}`} onClick={onClick}>{label}</button>
+            <button className={`tw-cursor-pointer tw-p-4 tw-rounded tw-border-soild tw-border-2 tw-min-h-[75px] tw-min-w-[150px] ${colorMap[type]}`} onClick={onClick}>{label}</button>
         </div>
     )
 }
