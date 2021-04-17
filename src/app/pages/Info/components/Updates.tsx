@@ -6,7 +6,7 @@ interface Props {
 
 export function Updates({ className = '' }: Props) {
     return (
-        <div className={`tw-flex tw-bg-gray-700 tw-bg-opacity-40 tw-rounded tw-flex-col tw-h-[600px] tw-w-[400px] ${className}`}>
+        <div className={`tw-flex tw-bg-gray-700 tw-bg-opacity-40 tw-rounded tw-flex-col tw-h-[600px] sm:tw-w-[400px] ${className}`}>
             <h1 className='tw-text-white tw-text-2xl tw-h-16 tw-pl-4 tw-pt-4 tw-bg-red-300 tw-rounded-tl tw-rounded-tr'>UPDATES</h1>
             <div className='tw-flex tw-flex-col tw-overflow-scroll'>
                 <div className='tw-p-8 tw-border-b tw-border-solid tw-border-gray-50 tw-min-h-[150px]'>

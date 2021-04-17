@@ -24,7 +24,7 @@ export function Home() {
     }
 
     return (
-        <div className='tw-flex tw-relative tw-min-w-[390px] tw-h-full tw-flex-col tw-bg-no-repeat tw-bg-cover tw-justify-center tw-items-center tw-bg-gradient-to-bl' style={{ backgroundImage: `url(${backgroundImage})` }}>
+        <div className='tw-flex tw-relative sm:tw-min-w-[390px] tw-h-full tw-flex-col tw-bg-no-repeat tw-bg-cover tw-justify-center tw-items-center tw-bg-gradient-to-bl' style={{ backgroundImage: `url(${backgroundImage})` }}>
             <div className='tw-bg-opacity-10 tw-bg-red-400 tw-w-full tw-h-full tw-absolute tw-pointer-events-none'></div>
             <div className='tw-flex tw-flex-col tw-justify-between'>
                 <div className='tw-flex tw-flex-col tw-justify-center tw-items-center'>
